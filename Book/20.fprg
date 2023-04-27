@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 05:10:26 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NTk6NDYgUE07MjMyMg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MTA6MDkgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMS0wMzswNDo1OTo0NiBQTTsxOS5mcHJnOzU0NDA="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MTA6MjYgUE07MjsyNDE3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <declare name="N" type="Integer" array="False" size=""/>
+            <output expression="&quot;How many numbers you want to enter&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="s" expression="0"/>
+            <do expression="n&gt;0">
+                <output expression="&quot;Insert the number&quot;" newline="True"/>
+                <input variable="N"/>
+                <assign variable="s" expression="s+N"/>
+                <assign variable="n" expression="n-1"/>
+            </do>
+            <output expression="&quot;The sum of the number is&quot;" newline="True"/>
+            <output expression="s" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

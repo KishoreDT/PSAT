@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-01-05 01:38:01 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDI6MzQ6NTMgUE07MjMxMw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjEtMDEtMDU7MDE6Mzg6MDEgUE07Mjg7MjQ3NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter no of elements&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Enter a number&quot;" newline="True"/>
+                <input variable="a[i]"/>
+            </for>
+            <output expression="ary(a)" newline="True"/>
+        </body>
+    </function>
+    <function name="ary" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="c, i, n, b" type="Integer" array="False" size=""/>
+            <assign variable="b" expression="0"/>
+            <output expression="&quot;Enter no of elements what you have first entered&quot;" newline="True"/>
+            <input variable="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="c" expression="a[i]"/>
+                <if expression="c&gt;b">
+                    <then>
+                        <assign variable="b" expression="c"/>
+                    </then>
+                    <else>
+                        <assign variable="b" expression="ary(c)"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

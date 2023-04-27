@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="roberto.atzori"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:42:30 PM"/>
+        <attribute name="created" value="cm9iZXJ0by5hdHpvcmk7IExJMDFQQzI2OyAyMDE2LTA0LTE5OyAwMy4yNi40NyA7IDMxNzc="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA3LTA2OyAxMjoyNzozOCA7IDMwMjA="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NDI6MzAgUE07MTsyNDE5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="gp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of terms in GP series&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="&quot;Enter first term of GP series&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter common ratio of GP series&quot;" newline="True"/>
+            <input variable="r"/>
+            <assign variable="gp" expression="a * (potenza(r, (n-1)))"/>
+            <output expression="&quot;Sum of the GP series till &quot; &amp; ToString(n) &amp; &quot;  terms is &quot; &amp; ToString(gp)" newline="True"/>
+        </body>
+    </function>
+    <function name="Potenza" type="Integer" variable="Risultato">
+        <parameters>
+            <parameter name="Base" type="Integer" array="False"/>
+            <parameter name="Esponente" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Risultato" type="Integer" array="False" size=""/>
+            <if expression="esponente = 0">
+                <then>
+                    <assign variable="Risultato" expression="1"/>
+                </then>
+                <else>
+                    <assign variable="Risultato" expression="Base * Potenza(Base, esponente -1)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

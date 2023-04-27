@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-24 02:52:18 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wNC0wMzsgMTI6MTY6MjIgOyAyNzEw"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wNC0wMzsgMTI6MzE6MTIgOyAyNzA2"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMjQ7MDI6NTI6MTggUE07MTsyNDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="12"/>
+            <call expression="computeTotient(n)"/>
+        </body>
+    </function>
+    <function name="computeTotient" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="phi" type="Integer" array="True" size="n+1"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="p" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n" direction="inc" step="1">
+                <assign variable="phi[i]" expression="i"/>
+            </for>
+            <for variable="p" start="2" end="n" direction="inc" step="1">
+                <if expression="phi[p] = p">
+                    <then>
+                        <assign variable="phi[p]" expression="p - 1"/>
+                        <assign variable="i" expression="2 * p"/>
+                        <while expression="i &lt;= n">
+                            <assign variable="phi[i]" expression="(phi[i]/p) * (p-1)"/>
+                            <assign variable="i" expression="i + p"/>
+                        </while>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <output expression="&quot;Totient of &quot; &amp; ToString(i) &amp; &quot; is &quot; &amp; ToString(phi[i] )" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

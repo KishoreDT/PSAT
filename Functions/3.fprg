@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:27:02 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA2LTIwOyAwOTo1OTo0NCA7IDMwMjM="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA2LTIwOyAxMToxMzo0OSA7IDMwMTE="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6Mjc6MDIgUE07MzsyNDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="amount" type="Integer" array="False" size=""/>
+            <declare name="deposit" type="Integer" array="False" size=""/>
+            <declare name="withdraw" type="Integer" array="False" size=""/>
+            <declare name="choice" type="Integer" array="False" size=""/>
+            <declare name="pin" type="Integer" array="False" size=""/>
+            <declare name="secretPin" type="Integer" array="False" size=""/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <declare name="transaction" type="String" array="False" size=""/>
+            <declare name="EXIT" type="Boolean" array="False" size=""/>
+            <assign variable="amount" expression="1000"/>
+            <assign variable="pin" expression="0"/>
+            <assign variable="transaction" expression="&quot;y&quot;"/>
+            <assign variable="EXIT" expression="False"/>
+            <output expression="&quot;ENTER YOUR CREDIT CARD&quot;" newline="True"/>
+            <call expression="wait(&quot;PLEASE, WAIT&quot;, 100000)"/>
+            <comment text="12345 is your pin"/>
+            <assign variable="secretPin" expression="12345"/>
+            <while expression="pin &lt;&gt; secretPin">
+                <output expression="&quot;ENTER YOUR SECRET PIN NUMBER:&quot;" newline="True"/>
+                <input variable="pin"/>
+                <call expression="wait(&quot;PLEASE, WAIT&quot;, 100000)"/>
+                <if expression="pin &lt;&gt; secretPin">
+                    <then>
+                        <output expression="ToChar(13) &amp; ToChar(10) &amp; &quot;PLEASE ENTER VALID PASSWORD&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <do expression="EXIT = False">
+                <call expression="menu()"/>
+                <input variable="choice"/>
+                <if expression="choice = 1">
+                    <then>
+                        <output expression="&quot;[EN] YOUR BALANCE IN Rs: &quot; &amp; AMOUNT &amp; ToChar(13) &amp; ToChar(10) &amp; amount" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="choice = 2">
+                    <then>
+                        <output expression="&quot;[EN] ENTER THE AMOUNT TO WITHDRAW:&quot; &amp; AMOUNT &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                        <input variable="withdraw"/>
+                        <if expression="withdraw MOD 100 &lt;&gt; 0">
+                            <then>
+                                <output expression="&quot;PLEASE ENTER THE AMOUNT IN MULTIPLES OF 100&quot;&amp; AMOUNT &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="withdraw &gt;(amount - 500)">
+                                    <then>
+                                        <output expression="&quot;INSUFFICENT BALANCE&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="amount" expression="amount - withdraw"/>
+                                        <output expression="&quot;PLEASE COLLECT CASH&quot; &amp; AMOUNT &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                                        <call expression="wait(&quot;PLEASE, WAIT&quot;, 100000)"/>
+                                        <output expression="&quot;YOUR CURRENT BALANCE IS: &quot; &amp; AMOUNT &amp; ToChar(13) &amp; ToChar(10) &amp; amount" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="choice = 3">
+                    <then>
+                        <output expression="&quot;ENTER THE AMOUNT TO DEPOSIT&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                        <input variable="deposit"/>
+                        <assign variable="amount" expression="amount + deposit"/>
+                        <call expression="wait(&quot;PLEASE, WAIT&quot;, 100000)"/>
+                        <output expression="&quot;YOUR CURRENT BALANCE IS: &quot; &amp; AMOUNT &amp; ToChar(13) &amp; ToChar(10) &amp; amount" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="choice = 4">
+                    <then>
+                        <output expression="&quot;DO YOU WISH TO HAVE ANOTHER TRANSCATION?(y/n)&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                        <input variable="transaction"/>
+                        <if expression="(transaction = &quot;n&quot; OR transaction = &quot;N&quot;)">
+                            <then>
+                                <output expression="&quot;[EN] RETIRE YOUR CREDIT CARD&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                                <call expression="wait(&quot;PLEASE, WAIT&quot;, 100000)"/>
+                                <output expression="&quot;THANK YOU USING ATM&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+                                <assign variable="EXIT" expression="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="menu" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;******** Welcome to ATM Service **************&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <output expression="&quot;1. Check Balance&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <output expression="&quot;2. Withdraw Cash&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <output expression="&quot;3. Deposit Cash&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <output expression="&quot;4. Quit&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <output expression="&quot;****************************************************&quot;" newline="True"/>
+            <output expression="&quot;Enter your choice: &quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+        </body>
+    </function>
+    <function name="wait" type="None" variable="">
+        <parameters>
+            <parameter name="message" type="String" array="False"/>
+            <parameter name="HOW" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="message" newline="True"/>
+            <for variable="i" start="0" end="HOW" direction="inc" step="1"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:39:58 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUTy1QQzsgMjAxNi0wMS0xNjsgMTI6MjI6MTcgOyAyNjgx"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUTy1QQzsgMjAxNi0wMS0xNjsgMTI6NTA6MTYgOyAyNjgx"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6Mzk6NTggUE07MjsyNDM2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dms" type="Integer" array="False" size=""/>
+            <declare name="Dmax" type="Integer" array="False" size=""/>
+            <assign variable="Dmax" expression="100"/>
+            <assign variable="dms" expression="DimVect()"/>
+            <declare name="vet" type="Integer" array="True" size="dms"/>
+            <call expression="FillVect(dms, vet)"/>
+            <output expression="&quot;Sum of array elements: &quot; &amp; ToChar(13) &amp; ToChar(10) &amp; SumVectElement(dms, vet)" newline="True"/>
+        </body>
+    </function>
+    <function name="DimVect" type="Integer" variable="dimension">
+        <parameters/>
+        <body>
+            <declare name="dimension" type="Integer" array="False" size=""/>
+            <output expression="&quot;Array size (&lt;100)?&quot;" newline="True"/>
+            <input variable="dimension"/>
+        </body>
+    </function>
+    <function name="FillVect" type="None" variable="">
+        <parameters>
+            <parameter name="dimension" type="Integer" array="False"/>
+            <parameter name="vet" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="item" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; dimension">
+                <output expression="&quot;Digit item &quot; &amp; ToString(i) &amp; &quot; value&quot;" newline="True"/>
+                <input variable="item"/>
+                <assign variable="vet[i]" expression="item"/>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+        </body>
+    </function>
+    <function name="SumVectElement" type="Integer" variable="s">
+        <parameters>
+            <parameter name="dimension" type="Integer" array="False"/>
+            <parameter name="vet" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="s" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; dimension">
+                <assign variable="s" expression="s + vet[i]"/>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

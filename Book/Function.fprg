@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 02:57:36 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDI6NDc6NDMgUE07MjMxOQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDI6NTc6MzYgUE07MTsyNDMw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <assign variable="a" expression="0"/>
+            <assign variable="b" expression="0"/>
+            <output expression="&quot;Addtion&quot;" newline="True"/>
+            <output expression="add(a,b)" newline="True"/>
+            <output expression="&quot;Subraction&quot;" newline="True"/>
+            <output expression="sub(a,b)" newline="True"/>
+            <output expression="&quot;Multiplcation&quot;" newline="True"/>
+            <output expression="mul(a,b)" newline="True"/>
+            <output expression="&quot;Division&quot;" newline="True"/>
+            <output expression="div(a,b)" newline="True"/>
+        </body>
+    </function>
+    <function name="add" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <input variable="a"/>
+            <input variable="b"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a+b"/>
+        </body>
+    </function>
+    <function name="div" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <input variable="a"/>
+            <input variable="b"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a/b"/>
+        </body>
+    </function>
+    <function name="mul" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <input variable="a"/>
+            <input variable="b"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a*b"/>
+        </body>
+    </function>
+    <function name="sub" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <input variable="a"/>
+            <input variable="b"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a-b"/>
+        </body>
+    </function>
+</flowgorithm>

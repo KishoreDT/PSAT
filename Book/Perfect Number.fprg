@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-10 02:40:47 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTA7MDI6MTE6MjcgUE07MjMwNQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTA7MDI6NDA6NDcgUE07NjsyNDIy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="a"/>
+            <assign variable="b" expression="0"/>
+            <for variable="x" start="1" end="a" direction="inc" step="1">
+                <if expression="x % a == 0">
+                    <then>
+                        <assign variable="b" expression="b+x"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="b==a">
+                <then>
+                    <output expression="&quot;It is a perfect number&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;It is not a perfect number&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

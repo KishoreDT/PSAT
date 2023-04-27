@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:54:15 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NDU6NTggUE07MjMyMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NDc6MjcgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMS0wMzswNDozNjo1MSBQTTsxNS5mcHJnOzU0MzY="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NTQ6MTUgUE07MTsyNDIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <declare name="di" type="Integer" array="False" size=""/>
+            <declare name="q" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <output expression="&quot;Insert dividend&quot;" newline="True"/>
+            <input variable="d"/>
+            <output expression="&quot;Insert Divisor&quot;" newline="True"/>
+            <input variable="di"/>
+            <assign variable="q" expression="0"/>
+            <assign variable="r" expression="d"/>
+            <while expression="r&gt;=di">
+                <assign variable="r" expression="r-di"/>
+                <assign variable="q" expression="q+1"/>
+            </while>
+            <output expression="&quot;The Quotient is&quot;&amp;q" newline="True"/>
+            <output expression="&quot;The reminder is&quot;*r" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

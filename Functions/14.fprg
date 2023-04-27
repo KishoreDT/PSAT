@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:54:46 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTExLTAyOyAwODozMzo0OSA7IDMwODE="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTExLTAzOyAwOTowNToxNyA7IDMwNzc="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NTQ6NDYgUE07MjsyNDMw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="aSize, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;How many elements?&quot;" newline="True"/>
+            <input variable="aSize"/>
+            <declare name="X" type="Integer" array="True" size="aSize"/>
+            <declare name="Y" type="Integer" array="True" size="aSize"/>
+            <for variable="i" start="0" end="aSize - 1" direction="inc" step="1">
+                <output expression="&quot;Input X array element n. &quot; &amp; ToString(i+1)" newline="True"/>
+                <input variable="X[i]"/>
+                <output expression="&quot;Input Y array element n. &quot; &amp; ToString(i+1)" newline="True"/>
+                <input variable="Y[i]"/>
+            </for>
+            <output expression="&quot;Correlation Coefficient is:&quot;" newline="True"/>
+            <output expression="correlationCoefficient(X, Y, aSize)" newline="True"/>
+        </body>
+    </function>
+    <function name="correlationCoefficient" type="Real" variable="corr">
+        <parameters>
+            <parameter name="X" type="Integer" array="True"/>
+            <parameter name="Y" type="Integer" array="True"/>
+            <parameter name="aSize" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="sumX, sumY, sumXY" type="Integer" array="False" size=""/>
+            <declare name="squareSumX, squareSumY" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="corr" type="Real" array="False" size=""/>
+            <assign variable="sumX" expression="0"/>
+            <assign variable="sumY" expression="0"/>
+            <assign variable="sumXY" expression="0"/>
+            <assign variable="squareSumX" expression="0"/>
+            <assign variable="squareSumY" expression="0"/>
+            <for variable="i" start="0" end="aSize - 1" direction="inc" step="1">
+                <assign variable="sumX" expression="sumX + X[i]"/>
+                <assign variable="sumY" expression="sumY + Y[i]"/>
+                <assign variable="sumXY" expression="sumXY + X[i] * Y[i]"/>
+                <assign variable="squareSumX" expression="squareSumX + X[i] * X[i]"/>
+                <assign variable="squareSumY" expression="squareSumY + Y[i] * Y[i]"/>
+            </for>
+            <assign variable="corr" expression="(aSize * sumXY - sumX * sumY) / sqrt((aSize * squareSumX - sumX * sumX) * (aSize * squareSumY - sumY * sumY))"/>
+        </body>
+    </function>
+</flowgorithm>

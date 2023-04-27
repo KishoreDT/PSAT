@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:59:33 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NTU6MzcgUE07MjMxOA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NTk6MzMgUE07MTsyNDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="t" type="Integer" array="False" size=""/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="t" expression="0"/>
+            <while expression="n&lt;&gt;0">
+                <output expression="&quot;Insert the number&quot;" newline="True"/>
+                <input variable="n"/>
+                <assign variable="t" expression="t+1"/>
+            </while>
+            <output expression="&quot;The number entered are&quot;" newline="True"/>
+            <output expression="t" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

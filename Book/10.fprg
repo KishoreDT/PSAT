@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 03:43:36 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MzY6NTkgUE07MjMyMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6NDM6MzYgUE07MTsyNDIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="exit" type="Boolean" array="False" size=""/>
+            <output expression="&quot;Enter any number&gt;10&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="exit" expression="False"/>
+            <while expression="n&gt;10 AND exit=False">
+                <assign variable="s" expression="0"/>
+                <while expression="n&gt;0">
+                    <assign variable="r" expression="n MOD 10"/>
+                    <assign variable="n" expression="n/10"/>
+                    <assign variable="s" expression="s+r"/>
+                </while>
+                <if expression="s&gt;10">
+                    <then>
+                        <assign variable="n" expression="s"/>
+                    </then>
+                    <else>
+                        <assign variable="exit" expression="True"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Generic root of number&quot;&amp;ToString(s)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

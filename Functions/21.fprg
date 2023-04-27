@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-24 02:53:08 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wNC0wMzsgMTE6NDY6NTAgOyAyNzEz"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wNC0wMzsgMTI6MDg6MzkgOyAyNzE5"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMjQ7MDI6NTM6MDggUE07MjsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a integer: &quot;" newline="True"/>
+            <input variable="n"/>
+            <call expression="printFibRepresntation(n)"/>
+        </body>
+    </function>
+    <function name="nearestSmallerEqFib" type="Integer" variable="result">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <declare name="f1" type="Integer" array="False" size=""/>
+            <declare name="f2" type="Integer" array="False" size=""/>
+            <declare name="f3" type="Integer" array="False" size=""/>
+            <if expression="n = 0 OR n = 1">
+                <then>
+                    <assign variable="result" expression="n"/>
+                </then>
+                <else>
+                    <assign variable="f1" expression="0"/>
+                    <assign variable="f2" expression="1"/>
+                    <assign variable="f3" expression="1"/>
+                    <while expression="f3 &lt;= n">
+                        <assign variable="f1" expression="f2"/>
+                        <assign variable="f2" expression="f3"/>
+                        <assign variable="f3" expression="f1 + f2"/>
+                    </while>
+                    <assign variable="result" expression="f2"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="printFibRepresntation" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="f" type="Integer" array="False" size=""/>
+            <declare name="s" type="String" array="False" size=""/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <assign variable="s" expression="&quot;&quot;"/>
+            <assign variable="num" expression="n"/>
+            <while expression="n &gt; 0">
+                <assign variable="f" expression="nearestSmallerEqFib(n)"/>
+                <assign variable="s" expression="s &amp; ToString(f) &amp; &quot; &quot;"/>
+                <assign variable="n" expression="n - f"/>
+            </while>
+            <output expression="&quot;Non-neighbouring Fibonacci Representation of &quot; &amp; ToString(num) &amp; &quot; is the sum of the numbers: &quot; &amp; s" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

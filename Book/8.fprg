@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 03:31:03 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MjU6MTUgUE07MjMxMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MzE6MDMgUE07MTsyNDEy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="c" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter radius of circle&quot;" newline="True"/>
+            <input variable="r"/>
+            <assign variable="a" expression="PI*r*r"/>
+            <output expression="&quot;Area of circle&quot;&amp;a" newline="True"/>
+            <assign variable="c" expression="2*PI*r"/>
+            <output expression="&quot;Circumference os circle&quot;&amp;c" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

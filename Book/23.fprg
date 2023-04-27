@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 05:26:18 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MjM6MDggUE07MjMxMg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MjY6MTggUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="f" type="Integer" array="False" size=""/>
+            <declare name="F" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <output expression="&quot;Insert the first number&quot;" newline="True"/>
+            <input variable="f"/>
+            <output expression="&quot;Insert the second number&quot;" newline="True"/>
+            <input variable="F"/>
+            <assign variable="r" expression="0"/>
+            <while expression="f&gt;0">
+                <if expression="">
+                    <then>
+                        <assign variable="r" expression="r+F"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="f" expression="f/2"/>
+                <assign variable="F" expression="F*2"/>
+            </while>
+            <output expression="r" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

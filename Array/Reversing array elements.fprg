@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:50:10 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMS0zMTsgMDc6MDg6NTAgOyAyNzE0"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMS0zMTsgMDc6MjY6MDAgOyAyNzA5"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6NTA6MTAgUE07MTsyNDE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ssize" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the total number of elements&quot;" newline="True"/>
+            <input variable="ssize"/>
+            <declare name="arr" type="Integer" array="True" size="ssize"/>
+            <output expression="&quot;Enter the elements of list :&quot;" newline="True"/>
+            <for variable="i" start="0" end="ssize - 1" direction="inc" step="1">
+                <output expression="&quot;Element n.: &quot; &amp; ToString(i + 1)" newline="True"/>
+                <input variable="arr[i]"/>
+            </for>
+            <assign variable="j" expression="i - 1"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; j">
+                <assign variable="temp" expression="arr[i]"/>
+                <assign variable="arr[i]" expression="arr[j]"/>
+                <assign variable="arr[j]" expression="temp"/>
+                <assign variable="i" expression="i + 1"/>
+                <assign variable="j" expression="j - 1"/>
+            </while>
+            <output expression="&quot;Result after reversal :&quot;" newline="True"/>
+            <for variable="i" start="0" end="ssize - 1" direction="inc" step="1">
+                <output expression="arr[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

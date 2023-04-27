@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-13 08:16:29 AM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTA7MDI6NTQ6NDMgUE07MjMxMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTA7MDI6NTk6NDYgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMS0xMDswMjo0MToxMiBQTTtTdHJvbmcgTnVtYmVyLmZwcmc7NjYwOQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMTM7MDg6MTY6MjkgQU07OTsyNDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, x, t" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="a"/>
+            <assign variable="b" expression="0"/>
+            <assign variable="x" expression="a"/>
+            <while expression="x&gt;0">
+                <assign variable="t" expression="x%10"/>
+                <assign variable="b" expression="b+(t^3)"/>
+                <assign variable="x" expression="x/10"/>
+            </while>
+            <if expression="a==b">
+                <then>
+                    <output expression="&quot;It is Amstrong number&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;It is not a Amstrong number&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

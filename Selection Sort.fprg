@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-01-19 03:23:07 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjEtMDEtMDU7MDE6MzY6MjAgUE07MjMwOA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjEtMDEtMDU7MDE6Mzg6MTkgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMi0zMTswMjozNDo1MyBQTTtMYXJnZXN0IGVsZW1lbnQgaW4gYXJyYXkuZnByZzs3NjU2"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjEtMDEtMDU7MDI6NTM6NTMgUE07MTtLaXNob3JlO0FTVVM7MjAyMS0wMS0wNTswMTozNjoyMCBQTTtCaW5hcnkgc2VhcmNoLmZwcmc7NjYwMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjEtMDEtMTk7MDM6MjM6MDcgUE07MjE7MjQ3NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i, j, x, t" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter no of elements&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Enter a number&quot;" newline="True"/>
+                <input variable="a[i]"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="x" expression="i"/>
+                <for variable="j" start="i+1" end="n-1" direction="inc" step="1">
+                    <if expression="a[x]&gt;a[j]">
+                        <then>
+                            <assign variable="x" expression="j"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <assign variable="t" expression="a[i]"/>
+                <assign variable="a[i]" expression="a[x]"/>
+                <assign variable="a[x]" expression="t"/>
+            </for>
+            <output expression="&quot;Sorted Array&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="a[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

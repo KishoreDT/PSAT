@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:28:02 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6MTU6MTEgUE07MjMwNg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6MTU6NTUgUE07NjtLaXNob3JlO0FTVVM7MjAyMC0xMS0wMzswNDowNDoyNCBQTTsxMi5mcHJnOzU0Mjk="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6Mjg6MDIgUE07MTsyNDE4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="t" type="Integer" array="False" size=""/>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <assign variable="s" expression="0"/>
+            <output expression="&quot;Enter the first number os the AP series&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter the total numbers in the AP series&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="&quot;Enter the common difference of AP series&quot;" newline="True"/>
+            <input variable="d"/>
+            <assign variable="s" expression="(n*(2*a+(n-1)*d))/2"/>
+            <assign variable="t" expression="a+(n-1)/d"/>
+            <output expression="&quot;Sum of the AP series&quot;" newline="True"/>
+            <assign variable="i" expression="a"/>
+            <while expression="i&lt;=t">
+                <if expression="i&lt;&gt;t">
+                    <then>
+                        <output expression="ToString(i)&amp;&quot;+&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="ToString(i)&amp;&quot;=&quot;&amp;ToString(s)" newline="True"/>
+                    </else>
+                </if>
+                <assign variable="i" expression="i+d"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

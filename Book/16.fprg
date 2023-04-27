@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:41:33 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6MzY6NTEgUE07MjMxMw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NDE6MzMgUE07MTsyNDE3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="r" type="Real" array="False" size=""/>
+            <declare name="s" type="Real" array="False" size=""/>
+            <assign variable="s" expression="0"/>
+            <output expression="&quot;Enter the first number of the GP series&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter the common ratio of GP series&quot;" newline="True"/>
+            <input variable="r"/>
+            <if expression="1&gt;r">
+                <then>
+                    <assign variable="s" expression="a/(1-r)"/>
+                </then>
+                <else>
+                    <assign variable="s" expression="a/(r-1)"/>
+                </else>
+            </if>
+            <output expression="&quot;Sum of the infinite GP series:&quot;&amp;ToString(s)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

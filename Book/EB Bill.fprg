@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-02 12:07:22 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDI7MTE6MDc6MDcgQU07MjI5NQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDI7MTI6MDc6MjIgUE07ODsyNDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, m, a" type="Integer" array="False" size=""/>
+            <declare name="x, y" type="String" array="False" size=""/>
+            <output expression="&quot;Enter your name&quot;" newline="True"/>
+            <input variable="x"/>
+            <output expression="&quot;Enter Consumer no.&quot;" newline="True"/>
+            <input variable="y"/>
+            <output expression="&quot;Enter reading&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="&quot;Enter connection type&quot;" newline="True"/>
+            <output expression="&quot;1.Domestic&quot;" newline="True"/>
+            <output expression="&quot;2.Commercial&quot;" newline="True"/>
+            <input variable="a"/>
+            <assign variable="m" expression="0"/>
+            <if expression="a=1">
+                <then>
+                    <if expression="n&gt;0 AND n&lt;101">
+                        <then>
+                            <assign variable="m" expression="n"/>
+                        </then>
+                        <else>
+                            <if expression="n&gt;100 AND n&lt;201">
+                                <then>
+                                    <assign variable="m" expression="n*2.5"/>
+                                </then>
+                                <else>
+                                    <if expression="n&gt;200 AND n&lt;501">
+                                        <then>
+                                            <assign variable="m" expression="n*4"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="m" expression="n*6"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="n&gt;0 AND n&lt;101">
+                        <then>
+                            <assign variable="m" expression="n*2"/>
+                        </then>
+                        <else>
+                            <if expression="n&gt;100 AND n&lt;201">
+                                <then>
+                                    <assign variable="m" expression="n*4.5"/>
+                                </then>
+                                <else>
+                                    <if expression="n&gt;200 AND n&lt;501">
+                                        <then>
+                                            <assign variable="m" expression="n*6"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="m" expression="n*7"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Consumer name: &quot; &amp; x" newline="True"/>
+            <output expression="&quot;Consumer no.: &quot; &amp; y" newline="True"/>
+            <output expression="&quot;Your current bill is &quot; &amp; m" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

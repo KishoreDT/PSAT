@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-31 03:22:06 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDI6MzQ6NTMgUE07MjMxMw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDM6MjI6MDYgUE07MjM7MjQ2OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="pow(a,b)" newline="True"/>
+        </body>
+    </function>
+    <function name="pow" type="Integer" variable="a">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="a" expression="a^b"/>
+        </body>
+    </function>
+</flowgorithm>

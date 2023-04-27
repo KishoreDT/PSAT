@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:40:41 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA2LTE5OyAwODo1MzoxNCA7IDMwMjE="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA2LTE5OyAwOTowODowMyA7IDMwMjA="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NDA6NDEgUE07MTsyNDE5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="s" type="String" array="False" size=""/>
+            <declare name="ch" type="String" array="False" size=""/>
+            <declare name="result" type="String" array="False" size=""/>
+            <output expression="&quot;Enter a string&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <input variable="s"/>
+            <assign variable="result" expression="&quot;&quot;"/>
+            <for variable="i" start="1" end="len(s)" direction="inc" step="1">
+                <assign variable="result" expression="result &amp; ToString(ToCode(MID2(s, i, 1))) &amp; &quot; &quot;"/>
+            </for>
+            <output expression="&quot;ASCII values of the string '&quot; &amp; s &amp; &quot;':&quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <output expression="result" newline="True"/>
+        </body>
+    </function>
+    <function name="MID2" type="String" variable="Stringa">
+        <parameters>
+            <parameter name="Stringa" type="String" array="False"/>
+            <parameter name="Inizio" type="Integer" array="False"/>
+            <parameter name="Quanti" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="I" type="Integer" array="False" size=""/>
+            <declare name="Conta" type="Integer" array="False" size=""/>
+            <declare name="SS" type="String" array="False" size=""/>
+            <assign variable="I" expression="0"/>
+            <assign variable="SS" expression="&quot;&quot;"/>
+            <assign variable="Conta" expression="0"/>
+            <if expression="Quanti &gt; 0">
+                <then>
+                    <while expression="I &lt;= len(Stringa) - 1 AND Conta &lt; Quanti">
+                        <if expression="I &gt;= Inizio - 1">
+                            <then>
+                                <assign variable="SS" expression="SS &amp; Char(stringa, I)"/>
+                                <assign variable="Conta" expression="Conta + 1"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="I" expression="I + 1"/>
+                    </while>
+                </then>
+                <else>
+                    <while expression="I &lt;= (len(Stringa) - 1)">
+                        <if expression="I &gt;= Inizio - 1">
+                            <then>
+                                <assign variable="SS" expression="SS &amp; Char(stringa, I)"/>
+                                <assign variable="Conta" expression="Conta + 1"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="I" expression="I + 1"/>
+                    </while>
+                </else>
+            </if>
+            <assign variable="Stringa" expression="SS"/>
+        </body>
+    </function>
+</flowgorithm>

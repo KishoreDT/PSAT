@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:36:47 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6Mjk6NDIgUE07MjMxNQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6Mjk6NDUgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMS0wMzswNDoxNToxMSBQTTsxNC5mcHJnOzU0Mjg="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6MzY6NDcgUE07MTsyNDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="f" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="t" type="Integer" array="False" size=""/>
+            <declare name="v" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the numberof terms in GP series&quot;" newline="True"/>
+            <input variable="t"/>
+            <output expression="&quot;Enter first term of GP series&quot;" newline="True"/>
+            <input variable="f"/>
+            <output expression="&quot;Enter common ratio of GP series&quot;" newline="True"/>
+            <input variable="r"/>
+            <assign variable="s" expression="0"/>
+            <assign variable="v" expression="f"/>
+            <for variable="i" start="0" end="t-1" direction="inc" step="1">
+                <output expression="&quot;Sum of the GP series till&quot;&amp;ToString(i+1)&amp;&quot; terms is&quot;&amp;ToString(v)" newline="True"/>
+                <assign variable="s" expression="s+v"/>
+                <assign variable="v" expression="v*r"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

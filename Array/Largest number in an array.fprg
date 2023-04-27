@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:37:10 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6MzA6MTEgUE07MjMwNw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6Mzc6MTAgUE07MTsyNDIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <declare name="largest" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the total number of elements&quot;" newline="True"/>
+            <input variable="num"/>
+            <declare name="a" type="Integer" array="True" size="num"/>
+            <output expression="&quot;Enter the elements of list&quot;" newline="True"/>
+            <for variable="i" start="0" end="num-1" direction="inc" step="1">
+                <output expression="&quot;Element:&quot; &amp; ToString(i+1)" newline="True"/>
+                <input variable="a[i]"/>
+            </for>
+            <assign variable="largest" expression="a[0]"/>
+            <for variable="i" start="0" end="num-1" direction="inc" step="1">
+                <if expression="a[i]&gt;largest">
+                    <then>
+                        <assign variable="largest" expression="a[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Largest element:&quot; &amp; ToString(largest)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

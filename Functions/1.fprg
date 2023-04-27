@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:06:35 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MDI6MDEgUE07MjMwNQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MDY6MzUgUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <output expression="&quot;Input numbers&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="deg2rad(a)" newline="True"/>
+            <output expression="rad2deg(a)" newline="True"/>
+        </body>
+    </function>
+    <function name="deg2rad" type="Integer" variable="r">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <assign variable="r" expression="x*pi/180"/>
+        </body>
+    </function>
+    <function name="rad2deg" type="Integer" variable="r">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <assign variable="r" expression="180*x/pi"/>
+        </body>
+    </function>
+</flowgorithm>

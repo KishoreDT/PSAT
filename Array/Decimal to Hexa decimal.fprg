@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:41:53 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUTy1QQzsgMjAxNi0wMS0yMTsgMDk6MTI6MTIgOyAyNjc3"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUTy1QQzsgMjAxNi0wMS0yMTsgMDk6NTg6NTUgOyAyNjk0"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6NDE6NTMgUE07MTsyNDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the decimal number: &quot;" newline="True"/>
+            <input variable="num"/>
+            <output expression="&quot;The Hexadecimal number of decimal number &quot; &amp; num &amp; &quot; is: &quot;" newline="True"/>
+            <output expression="DecToHex(num)" newline="True"/>
+        </body>
+    </function>
+    <function name="DecToHex" type="String" variable="s">
+        <parameters>
+            <parameter name="num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="rem" type="Integer" array="True" size="50"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="length" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="length" expression="0"/>
+            <declare name="s" type="String" array="False" size=""/>
+            <assign variable="s" expression="&quot;&quot;"/>
+            <call expression="InitializeInt(rem)"/>
+            <while expression="num &gt; 0">
+                <assign variable="rem[i]" expression="num MOD 16"/>
+                <assign variable="num" expression="num / 16"/>
+                <assign variable="i" expression="i + 1"/>
+                <assign variable="length" expression="length + 1"/>
+            </while>
+            <for variable="i" start="length - 1" end="0" direction="dec" step="1">
+                <if expression="rem[i] = 10">
+                    <then>
+                        <assign variable="s" expression="s &amp; &quot;A&quot;"/>
+                    </then>
+                    <else>
+                        <if expression="rem[i] = 11">
+                            <then>
+                                <assign variable="s" expression="s &amp; &quot;B&quot;"/>
+                            </then>
+                            <else>
+                                <if expression="rem[i] = 12">
+                                    <then>
+                                        <assign variable="s" expression="s &amp; &quot;C&quot;"/>
+                                    </then>
+                                    <else>
+                                        <if expression="rem[i] = 13">
+                                            <then>
+                                                <assign variable="s" expression="s &amp; &quot;D&quot;"/>
+                                            </then>
+                                            <else>
+                                                <if expression="rem[i] = 14">
+                                                    <then>
+                                                        <assign variable="s" expression="s &amp; &quot;E&quot;"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="rem[i] = 15">
+                                                            <then>
+                                                                <assign variable="s" expression="s &amp; &quot;F&quot;"/>
+                                                            </then>
+                                                            <else>
+                                                                <assign variable="s" expression="s &amp; rem[i]"/>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="InitializeInt" type="None" variable="">
+        <parameters>
+            <parameter name="vet" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="Length" type="Integer" array="False" size=""/>
+            <assign variable="Length" expression="size(vet)"/>
+            <for variable="i" start="0" end="length - 1" direction="inc" step="1">
+                <assign variable="vet[i]" expression="0"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

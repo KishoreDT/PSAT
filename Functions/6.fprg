@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:35:55 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTA5LTI0OyAxMDozNjo1MCA7IDMwODA="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTA5LTI1OyAxMTo0Nzo0NCA7IDMwODc="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MzU6NTUgUE07MTsyNDI4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="RadiusOuter" type="Integer" array="False" size=""/>
+            <declare name="RadiusInner" type="Integer" array="False" size=""/>
+            <declare name="x, y, RadiusChecked" type="Integer" array="False" size=""/>
+            <assign variable="RadiusOuter" expression="8"/>
+            <assign variable="RadiusInner" expression="4"/>
+            <assign variable="x" expression="5"/>
+            <assign variable="y" expression="3"/>
+            <assign variable="RadiusChecked" expression="3"/>
+            <output expression="fitOrNotFit(RadiusOuter, RadiusInner, x, y, RadiusChecked)" newline="True"/>
+        </body>
+    </function>
+    <function name="fitOrNotFit" type="String" variable="result">
+        <parameters>
+            <parameter name="RadiusOuter" type="Integer" array="False"/>
+            <parameter name="RadiusInner" type="Integer" array="False"/>
+            <parameter name="x" type="Integer" array="False"/>
+            <parameter name="y" type="Integer" array="False"/>
+            <parameter name="RadiusChecked" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="value" type="Real" array="False" size=""/>
+            <declare name="result" type="String" array="False" size=""/>
+            <assign variable="value" expression="sqrt(pow(x, 2) + pow(y, 2))"/>
+            <if expression="value + RadiusChecked &lt;= RadiusOuter AND value - RadiusChecked &gt;= RadiusOuter - RadiusInner">
+                <then>
+                    <assign variable="result" expression="&quot;Fits&quot;"/>
+                </then>
+                <else>
+                    <assign variable="result" expression="&quot;Doesn't Fit&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Pow" type="Integer" variable="answer">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="answer" type="Integer" array="False" size=""/>
+            <declare name="increment" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <assign variable="answer" expression="a"/>
+            <assign variable="increment" expression="a"/>
+            <if expression="b = 0">
+                <then>
+                    <assign variable="answer" expression="1"/>
+                </then>
+                <else/>
+            </if>
+            <for variable="i" start="1" end="b - 1" direction="inc" step="1">
+                <for variable="j" start="1" end="a - 1" direction="inc" step="1">
+                    <assign variable="answer" expression="answer + increment"/>
+                </for>
+                <assign variable="increment" expression="answer"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

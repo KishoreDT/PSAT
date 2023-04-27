@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 03:25:04 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MTc6MzMgUE07MjMxMQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MjU6MDQgUE07MTsyNDE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="l" type="Real" array="False" size=""/>
+            <declare name="area" type="Real" array="False" size=""/>
+            <declare name="p" type="Real" array="False" size=""/>
+            <do expression="b&lt;=0">
+                <output expression="&quot;Insert the base&quot;" newline="True"/>
+                <input variable="b"/>
+            </do>
+            <do expression="l&lt;=0">
+                <output expression="&quot;Insert the length&quot;" newline="True"/>
+                <input variable="l"/>
+            </do>
+            <output expression="&quot;Area of rectangle is&quot;" newline="True"/>
+            <output expression="b*l" newline="True"/>
+            <output expression="&quot;Perimeter of rectangle is&quot;" newline="True"/>
+            <assign variable="p" expression="(l+b)*2"/>
+            <output expression="p" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

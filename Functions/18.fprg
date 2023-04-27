@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-24 02:51:59 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgQVNVUy1ST0JFUlRPOyAyMDE3LTAzLTEyOyAxMjoyNDo1NCA7IDI4NTI="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgQVNVUy1ST0JFUlRPOyAyMDE3LTAzLTE5OyAwNzoyMjozMiA7IDI4NTc="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMjQ7MDI6NTE6NTkgUE07MTsyNDI3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="prec" type="Integer" array="False" size=""/>
+            <output expression="&quot;number&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Precision&quot;" newline="True"/>
+            <input variable="prec"/>
+            <output expression="xCeil(a)" newline="True"/>
+            <output expression="xFloor(a)" newline="True"/>
+            <output expression="xRound(a,prec)" newline="True"/>
+            <output expression="xTruncate(a,prec)" newline="True"/>
+        </body>
+    </function>
+    <function name="xCeil" type="Integer" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="frac" type="Real" array="False" size=""/>
+            <if expression="a &lt; 0">
+                <then>
+                    <assign variable="r" expression="-(INT(abs(a)))"/>
+                </then>
+                <else>
+                    <assign variable="frac" expression="xFrac(a)"/>
+                    <if expression="frac &gt; 0">
+                        <then>
+                            <assign variable="r" expression="a + 1"/>
+                        </then>
+                        <else>
+                            <assign variable="r" expression="a"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="xFloor" type="Integer" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="frac" type="Real" array="False" size=""/>
+            <if expression="a &lt; 0">
+                <then>
+                    <assign variable="r" expression="-(INT(abs(a)) + 1)"/>
+                </then>
+                <else>
+                    <assign variable="r" expression="INT(a)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="xFrac" type="Real" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Real" array="False" size=""/>
+            <assign variable="r" expression="a - INT(a)"/>
+        </body>
+    </function>
+    <function name="xMOD" type="Integer" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+            <parameter name="b" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <assign variable="r" expression="a - b * xFloor(a/b)"/>
+        </body>
+    </function>
+    <function name="xRound" type="Real" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+            <parameter name="prec" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Real" array="False" size=""/>
+            <declare name="frac" type="Real" array="False" size=""/>
+            <assign variable="frac" expression="xFrac(a)"/>
+            <if expression="abs(frac) &gt;= 0.5">
+                <then>
+                    <if expression="prec = 0">
+                        <then>
+                            <if expression="a &lt; 0">
+                                <then>
+                                    <assign variable="r" expression="-(xCeil(abs(a)))"/>
+                                </then>
+                                <else>
+                                    <assign variable="r" expression="(xCeil(abs(a)))"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <assign variable="r" expression="ToReal(ToFixed(a, prec))"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="prec = 0">
+                        <then>
+                            <if expression="a &lt; 0">
+                                <then>
+                                    <assign variable="r" expression="-(xFloor(abs(a)))"/>
+                                </then>
+                                <else>
+                                    <assign variable="r" expression="(xFloor(abs(a)))"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <assign variable="r" expression="ToReal(ToFixed(a, prec))"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="xTruncate" type="Real" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+            <parameter name="prec" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Real" array="False" size=""/>
+            <if expression="prec = 0">
+                <then>
+                    <assign variable="r" expression="int(a)"/>
+                </then>
+                <else>
+                    <assign variable="r" expression="ToReal(ToFixed(a, prec))"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

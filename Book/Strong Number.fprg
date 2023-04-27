@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-10 03:47:37 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTA7MDI6NDE6MTIgUE07MjMwMg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTA7MDM6NDc6MzcgUE07NDsyNDI3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="f" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="a"/>
+            <assign variable="b" expression="0"/>
+            <assign variable="x" expression="a"/>
+            <while expression="a&gt;0">
+                <assign variable="i" expression="1"/>
+                <assign variable="f" expression="1"/>
+                <assign variable="r" expression="a%10"/>
+                <while expression="i&lt;=r">
+                    <assign variable="f" expression="f*i"/>
+                    <assign variable="i" expression="i+1"/>
+                </while>
+                <assign variable="b" expression="b+f"/>
+                <assign variable="a" expression="a/10"/>
+            </while>
+            <if expression="b==x">
+                <then>
+                    <output expression="&quot;It is a strong number&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;It is not a strong number&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

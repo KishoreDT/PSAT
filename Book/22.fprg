@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 05:23:05 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MTk6MjEgUE07MjMxMg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MjM6MDUgUE07MTsyNDE3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="f" type="Integer" array="False" size=""/>
+            <declare name="F" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <output expression="&quot;Insert the first number&quot;" newline="True"/>
+            <input variable="f"/>
+            <output expression="&quot;Insert the second number&quot;" newline="True"/>
+            <input variable="F"/>
+            <assign variable="r" expression="0"/>
+            <while expression="f&lt;&gt;0">
+                <assign variable="r" expression="r+F"/>
+                <assign variable="f" expression="f=1"/>
+            </while>
+            <output expression="&quot;The product os the number inserted is&quot;&amp;r" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

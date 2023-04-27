@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:50:28 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA1LTMwOyAwNzoyMDowNiA7IDMwMDc="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA1LTMwOyAwNzozNzoyNyA7IDMwMTg="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6NTA6MjggUE07MjsyNDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="mcm" type="Integer" array="False" size=""/>
+            <declare name="nd" type="Integer" array="False" size=""/>
+            <output expression="&quot;How many no. must be considered?&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="x" type="Integer" array="True" size="n"/>
+            <output expression="&quot;Insert number 1: &quot;" newline="True"/>
+            <input variable="x[0]"/>
+            <assign variable="mcm" expression="x[0]"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i &lt; n">
+                <output expression="&quot;Insert number &quot; &amp; ToString(i+1)" newline="True"/>
+                <input variable="x[i]"/>
+                <if expression="mcm &lt; x[i]">
+                    <then>
+                        <assign variable="mcm" expression="x[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <assign variable="nd" expression="1"/>
+            <while expression="nd = 1">
+                <assign variable="nd" expression="0"/>
+                <assign variable="i" expression="0"/>
+                <while expression="i &lt; n">
+                    <if expression="mcm MOD x[i] &lt;&gt; 0">
+                        <then>
+                            <assign variable="nd" expression="1"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="i" expression="i + 1"/>
+                </while>
+                <if expression="nd = 1">
+                    <then>
+                        <assign variable="mcm" expression="mcm + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <output expression="&quot;The LCM of the considered numbers is: &quot; &amp; ToString(mcm)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

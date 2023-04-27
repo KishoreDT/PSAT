@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-01 04:28:53 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDM6Mzk6MjkgUE07MjMxOQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDM6NDA6MDQgUE07MztLaXNob3JlO0FTVVM7MjAyMC0xMi0wMTswMjo0MToxNSBQTTsxLmZwcmc7NTM2NA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDQ6Mjg6NTIgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMi0wMTswMzoyOTo1MCBQTTsxLmZwcmc7NTM3OA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDQ6Mjg6NTMgUE07NDsyNDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter how many elements you want in array&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <declare name="max" type="Integer" array="False" size=""/>
+            <declare name="min" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="a[i]"/>
+                <assign variable="max" expression="a[0]"/>
+                <assign variable="min" expression="a[0]"/>
+                <if expression="a[i]&lt;min">
+                    <then>
+                        <assign variable="min" expression="a[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="a[i]&gt;max">
+                    <then>
+                        <assign variable="max" expression="a[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Minimum is &quot; &amp; min" newline="True"/>
+            <output expression="&quot;Maxmimun is &quot; &amp; max" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

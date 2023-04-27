@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:43:41 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMi0yMzsgMDk6Mjg6MjYgOyAyNzIz"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMi0yNDsgMDQ6Mjg6NDIgOyAyNzE3"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NDM6NDEgUE07MTsyNDIy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <output expression="Mod2(a,b)" newline="True"/>
+        </body>
+    </function>
+    <function name="Mod2" type="Integer" variable="result">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <if expression="b &gt; 0">
+                <then>
+                    <if expression="a &gt; 0">
+                        <then>
+                            <assign variable="result" expression="a mod b"/>
+                        </then>
+                        <else>
+                            <assign variable="result" expression="( b - abs( a MOD b ) ) MOD b"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="result" expression="( b +  ( a MOD abs(b) ) ) MOD b"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

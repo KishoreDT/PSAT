@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:54:27 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMy0wNTsgMDE6MDE6NTcgOyAyNzEx"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMy0wNTsgMDU6MTg6MzQgOyAyNzE4"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NTQ6MjcgUE07MjsyNDI5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="x" type="Real" array="False" size=""/>
+            <assign variable="n" expression="10"/>
+            <assign variable="x" expression="1.0"/>
+            <output expression="&quot;e^x = &quot; &amp;  ToString(exponential(n, x))" newline="True"/>
+        </body>
+    </function>
+    <function name="exponential" type="Real" variable="sum">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="x" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="sum" type="Real" array="False" size=""/>
+            <assign variable="sum" expression="1.0"/>
+            <for variable="i" start="n - 1" end="1" direction="dec" step="1">
+                <assign variable="sum" expression="1 + x * sum / i"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

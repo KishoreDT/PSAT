@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="roberto.atzori"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:42:37 PM"/>
+        <attribute name="created" value="cm9iZXJ0by5hdHpvcmk7IExJMDFQQzI2OyAyMDE2LTA0LTE5OyAwMy4yNi40NyA7IDMxNzc="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC00SkJNMFFOOyAyMDE2LTA3LTA2OyAxMjoyNDozOSA7IDMwMTg="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NDI6MzcgUE07MTsyNDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="gp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of terms in GP series&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="&quot;Enter first term of GP series&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter common ratio of GP series&quot;" newline="True"/>
+            <input variable="r"/>
+            <assign variable="gp" expression="a * (pow(r, (n-1)))"/>
+            <output expression="&quot;Sum of the GP series till &quot; &amp; ToString(n) &amp; &quot;  terms is &quot; &amp; ToString(gp)" newline="True"/>
+        </body>
+    </function>
+    <function name="Pow" type="Integer" variable="answer">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="answer" type="Integer" array="False" size=""/>
+            <declare name="increment" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <assign variable="answer" expression="a"/>
+            <assign variable="increment" expression="a"/>
+            <if expression="b = 0">
+                <then>
+                    <assign variable="answer" expression="1"/>
+                </then>
+                <else/>
+            </if>
+            <for variable="i" start="1" end="b - 1" direction="inc" step="1">
+                <for variable="j" start="1" end="a - 1" direction="inc" step="1">
+                    <assign variable="answer" expression="answer + increment"/>
+                </for>
+                <assign variable="increment" expression="answer"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

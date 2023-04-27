@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 03:05:13 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDI6NTQ6MzMgUE07MjMxMQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MDU6MTMgUE07MjsyNDE1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter first number:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter second number:&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Run sum!&quot;" newline="True"/>
+            <output expression="&quot;Sum is:&quot;&amp;ToString(a+b)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

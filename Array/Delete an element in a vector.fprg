@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:46:22 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMS0zMTsgMDg6MTg6MjIgOyAyNzE1"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMS0zMTsgMDg6MzU6MzIgOyAyNzE1"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6NDY6MjIgUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ssize" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="location" type="Integer" array="False" size=""/>
+            <declare name="MaxSize" type="Integer" array="False" size=""/>
+            <assign variable="MaxSize" expression="100"/>
+            <declare name="arr" type="Integer" array="True" size="MaxSize"/>
+            <output expression="&quot;Enter the total number of elements&quot;" newline="True"/>
+            <input variable="ssize"/>
+            <output expression="&quot;Enter the elements of list :&quot;" newline="True"/>
+            <for variable="i" start="0" end="ssize - 1" direction="inc" step="1">
+                <output expression="&quot;Element n.: &quot; &amp; ToString(i + 1)" newline="True"/>
+                <input variable="arr[i]"/>
+            </for>
+            <output expression="&quot;Enter location of the element to be deleted :&quot;" newline="True"/>
+            <input variable="location"/>
+            <while expression="location &lt; ssize">
+                <assign variable="arr[location - 1]" expression="arr[location]"/>
+                <assign variable="location" expression="location + 1"/>
+            </while>
+            <assign variable="ssize" expression="ssize - 1"/>
+            <for variable="i" start="0" end="ssize - 1" direction="inc" step="1">
+                <output expression="arr[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

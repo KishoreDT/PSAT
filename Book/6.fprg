@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 03:17:29 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MTM6MjYgUE07MjMwOQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MTc6MjkgUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="l" type="Integer" array="False" size=""/>
+            <declare name="area" type="Integer" array="False" size=""/>
+            <declare name="p" type="Integer" array="False" size=""/>
+            <input variable="b"/>
+            <input variable="l"/>
+            <output expression="&quot;Area of rectangle is:&quot;" newline="True"/>
+            <output expression="b*l" newline="True"/>
+            <output expression="&quot;Perimeter of rectangle is:&quot;" newline="True"/>
+            <assign variable="p" expression="(b+l)*2"/>
+            <output expression="p" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

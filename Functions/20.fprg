@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-24 02:52:46 PM"/>
+        <attribute name="created" value="Um9iZXJ0bztERVNLVE9QLVJPQkVSVE87MjAxOC0wMi0yODsiMTI6MzA6MjYgIjszMDQ5"/>
+        <attribute name="edited" value="Um9iZXJ0bztERVNLVE9QLVJPQkVSVE87MjAxOC0wMi0yODsiMDM6NTM6NTYgIjsxO1JvYmVydG87REVTS1RPUC1ST0JFUlRPOzIwMTgtMDItMjg7IjEyOjI5OjA0ICI7aGVhcCBzb3J0LmZwcmc7NzcxNQ=="/>
+        <attribute name="edited" value="Um9iZXJ0bztERVNLVE9QLVJPQkVSVE87MjAxOC0wMi0yODsiMDU6MTk6MjQgIjsxNTszMjE3"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMjQ7MDI6NTI6NDYgUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="15"/>
+            <call expression="georgeCantor(n)"/>
+        </body>
+    </function>
+    <function name="georgeCantor" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, j, k" type="Integer" array="False" size=""/>
+            <declare name="exitflag" type="Boolean" array="False" size=""/>
+            <assign variable="i" expression="1"/>
+            <assign variable="j" expression="1"/>
+            <assign variable="k" expression="1"/>
+            <assign variable="exitflag" expression="False"/>
+            <while expression="k &lt; n AND exitflag = False">
+                <assign variable="j" expression="j + 1"/>
+                <assign variable="k" expression="k + 1"/>
+                <if expression="k = n AND exitflag = False">
+                    <then>
+                        <assign variable="exitflag" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <while expression="j &gt; 1 AND k &lt; n AND exitflag = False">
+                    <assign variable="i" expression="i + 1"/>
+                    <assign variable="j" expression="j - 1"/>
+                    <assign variable="k" expression="k + 1"/>
+                </while>
+                <if expression="k = n AND exitflag = False">
+                    <then>
+                        <assign variable="exitflag" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="exitflag = False">
+                    <then>
+                        <assign variable="i" expression="i + 1"/>
+                        <assign variable="k" expression="k + 1"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="k = n AND exitflag = False">
+                    <then>
+                        <assign variable="exitflag" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <while expression="i &gt; 1 AND k &lt; n AND exitflag = False">
+                    <assign variable="i" expression="i - 1"/>
+                    <assign variable="j" expression="j + 1"/>
+                    <assign variable="k" expression="k + 1"/>
+                </while>
+            </while>
+            <output expression="&quot;N-th term : &quot; &amp; i &amp; &quot; / &quot; &amp; j" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

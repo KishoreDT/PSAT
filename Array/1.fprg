@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-01 04:28:43 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDM6Mjk6NTAgUE07MjMxMg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDM6Mjk6NTMgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMi0wMTswMjo0MToxNSBQTTsxLmZwcmc7NTM3Mw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDQ6Mjg6MzIgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMi0wMTswMzo0ODo1OCBQTTs2LmZwcmc7NTM5MA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDE7MDQ6Mjg6NDMgUE07NjsyNDI3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter how many elements you want in array&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <assign variable="b" expression="0"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="a[i]"/>
+                <if expression="a[i]%2==0">
+                    <then>
+                        <assign variable="b" expression="b+a[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;The sum of even nos. in the arrary is &quot; &amp; b" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

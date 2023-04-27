@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-15 02:17:46 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMTU7MDE6NDU6NTggUE07MjMyMQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMTU7MDI6MTc6NDYgUE07MTU7MjQ3OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, x" type="Integer" array="False" size=""/>
+            <output expression="&quot;1.Addition&quot;" newline="True"/>
+            <output expression="&quot;2.Subtraction&quot;" newline="True"/>
+            <output expression="&quot;3.Multiplication&quot;" newline="True"/>
+            <output expression="&quot;4.Division&quot;" newline="True"/>
+            <output expression="&quot;Select the option:&quot;" newline="False"/>
+            <input variable="x"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter first number:&quot;" newline="False"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter second number:&quot;" newline="False"/>
+            <input variable="b"/>
+            <if expression="x==1">
+                <then>
+                    <call expression="Add(a,b)"/>
+                </then>
+                <else>
+                    <if expression="x==2">
+                        <then>
+                            <call expression="Sub(a,b)"/>
+                        </then>
+                        <else>
+                            <if expression="x==3">
+                                <then>
+                                    <call expression="Mul(a,b)"/>
+                                </then>
+                                <else>
+                                    <if expression="x==4">
+                                        <then>
+                                            <call expression="Div(a,b)"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Invilad option.....Try Again......!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Add" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a+b"/>
+            <output expression="&quot;Addition is &quot; &amp; c" newline="True"/>
+        </body>
+    </function>
+    <function name="Div" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a/b"/>
+            <output expression="&quot;Division is &quot; &amp; c" newline="True"/>
+        </body>
+    </function>
+    <function name="Mul" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a*b"/>
+            <output expression="&quot;Multiplication is &quot; &amp; c" newline="True"/>
+        </body>
+    </function>
+    <function name="Sub" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a+b"/>
+            <output expression="&quot;Subraction is &quot; &amp; c" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

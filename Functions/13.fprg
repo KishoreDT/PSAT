@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:53:14 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTExLTAyOyAwODozMzo0OSA7IDMwODE="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTExLTAzOyAwODo1MDozMiA7IDMwNzM="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NTM6MTQgUE07MTsyNDIz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="aSize, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;How many elements?&quot;" newline="True"/>
+            <input variable="aSize"/>
+            <declare name="X" type="Integer" array="True" size="aSize"/>
+            <declare name="W" type="Integer" array="True" size="aSize"/>
+            <for variable="i" start="0" end="aSize - 1" direction="inc" step="1">
+                <output expression="&quot;Input element n. &quot; &amp; ToString(i+1)" newline="True"/>
+                <input variable="X[i]"/>
+                <output expression="&quot;Input weight of element n. &quot; &amp; ToString(i+1)" newline="True"/>
+                <input variable="W[i]"/>
+            </for>
+            <output expression="&quot;Weighted Mean is:&quot;" newline="True"/>
+            <output expression="weightedMean(X, W, aSize)" newline="True"/>
+        </body>
+    </function>
+    <function name="weightedMean" type="Real" variable="result">
+        <parameters>
+            <parameter name="X" type="Integer" array="True"/>
+            <parameter name="W" type="Integer" array="True"/>
+            <parameter name="aSize" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Real" array="False" size=""/>
+            <declare name="sum, numWeight, i" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <assign variable="numWeight" expression="0"/>
+            <for variable="i" start="0" end="aSize - 1" direction="inc" step="1">
+                <assign variable="numWeight" expression="numWeight + X[i] * W[i]"/>
+                <assign variable="sum" expression="sum + W[i]"/>
+            </for>
+            <assign variable="result" expression="numWeight / sum"/>
+        </body>
+    </function>
+</flowgorithm>

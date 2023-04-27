@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:45:05 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NDE6MzYgUE07MjMxMg=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NDE6NTYgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMS0wMzswNDozNjo1MSBQTTsxNS5mcHJnOzU0MzI="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6NDU6MDUgUE07MTsyNDIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <declare name="di" type="Integer" array="False" size=""/>
+            <declare name="q" type="Integer" array="False" size=""/>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <output expression="&quot;Dividend&quot;" newline="True"/>
+            <input variable="d"/>
+            <output expression="&quot;Divisor&quot;" newline="True"/>
+            <input variable="di"/>
+            <output expression="&quot;Remainder&quot;" newline="True"/>
+            <assign variable="r" expression="d-INT(d/di)*di"/>
+            <output expression="r" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

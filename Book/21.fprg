@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 05:19:07 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MDg6NDkgUE07MjMyMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDU6MTk6MDcgUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="p" type="Integer" array="False" size=""/>
+            <declare name="N" type="Integer" array="False" size=""/>
+            <output expression="&quot;How many numbers do you want to multiply with each other&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="p" expression="1"/>
+            <do expression="n&gt;0">
+                <output expression="&quot;Insert the number&quot;" newline="True"/>
+                <input variable="N"/>
+                <assign variable="p" expression="p*N"/>
+                <assign variable="n" expression="n-1"/>
+            </do>
+            <output expression="&quot;The product os the number is&quot;" newline="True"/>
+            <output expression="p" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

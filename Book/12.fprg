@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 04:04:11 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6NTE6NTIgUE07MjMxMA=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDQ6MDQ6MTEgUE07MjsyNDEz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="m" type="Integer" array="False" size=""/>
+            <declare name="s" type="Real" array="False" size=""/>
+            <declare name="u" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <output expression="&quot;Numbers of terms to calculate&quot;" newline="True"/>
+            <input variable="m"/>
+            <output expression="&quot;Index of the first terms&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="m" expression="INT((m+9)/10)"/>
+            <assign variable="s" expression="0"/>
+            <for variable="i" start="1" end="10" direction="inc" step="1">
+                <for variable="j" start="1" end="m" direction="inc" step="1">
+                    <assign variable="u" expression="1/n/n"/>
+                    <assign variable="s" expression="s+u"/>
+                    <assign variable="n" expression="n+1"/>
+                </for>
+                <output expression="s" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

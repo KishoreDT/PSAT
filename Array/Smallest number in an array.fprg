@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-08 02:38:34 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMS0yOTsgMDY6MTE6MDYgOyAyNzE1"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMS0yOTsgMDY6MTg6MTMgOyAyNzIw"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMDg7MDI6Mzg6MzQgUE07MTsyNDI4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <declare name="smallest" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the total number of elements&quot;" newline="True"/>
+            <input variable="num"/>
+            <declare name="a" type="Integer" array="True" size="num"/>
+            <output expression="&quot;Enter the elements of list :&quot;" newline="True"/>
+            <for variable="i" start="0" end="num - 1" direction="inc" step="1">
+                <output expression="&quot;Element n.: &quot; &amp; ToString(i + 1)" newline="True"/>
+                <input variable="a[i]"/>
+            </for>
+            <assign variable="smallest" expression="a[0]"/>
+            <for variable="i" start="0" end="num - 1" direction="inc" step="1">
+                <if expression="a[i] &lt; smallest">
+                    <then>
+                        <assign variable="smallest" expression="a[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Smallest Element : &quot; &amp; ToString(smallest)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

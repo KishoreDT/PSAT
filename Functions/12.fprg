@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:47:46 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMi0yMzsgMDk6Mjg6MjYgOyAyNzIz"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMy0wMjsgMDU6MzY6NTYgOyAyNzE5"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6NDc6NDYgUE07MzsyNDMz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Number: &quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Is divisible by: &quot; &amp; ToChar(13) &amp; ToChar(10)" newline="True"/>
+            <input variable="b"/>
+            <if expression="Mod2(a,b) = 0">
+                <then>
+                    <output expression="&quot;Divisible&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Not Divisible&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Mod2" type="Integer" variable="result">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <if expression="b &gt; 0">
+                <then>
+                    <if expression="a &gt; 0">
+                        <then>
+                            <assign variable="result" expression="Remainder(a, b)"/>
+                        </then>
+                        <else>
+                            <assign variable="result" expression="Remainder( ( b - abs( Remainder(a, b) ) ), b)"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="result" expression="Remainder( ( b +  ( Remainder(a, abs(b)) ) ), b)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Remainder" type="Integer" variable="result">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <assign variable="result" expression="a - INT(a / b) * b"/>
+        </body>
+    </function>
+</flowgorithm>

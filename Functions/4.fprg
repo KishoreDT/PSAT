@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:35:15 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMy0yNDsgMTA6MjU6MTcgOyAyNzE0"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUT19JNzsgMjAxNi0wMy0yNDsgMTA6NTU6MDQgOyAyNzEz"/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MzU6MTUgUE07MjsyNDI1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x1" type="Integer" array="False" size=""/>
+            <declare name="y1" type="Integer" array="False" size=""/>
+            <declare name="x2" type="Integer" array="False" size=""/>
+            <declare name="y2" type="Integer" array="False" size=""/>
+            <declare name="x3" type="Integer" array="False" size=""/>
+            <declare name="y3" type="Integer" array="False" size=""/>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <declare name="y" type="Integer" array="False" size=""/>
+            <output expression="&quot;Coordinate x1 of A(x1, y1)&quot;" newline="True"/>
+            <input variable="x1"/>
+            <output expression="&quot;Coordinate y1 of A(x1, y1)&quot;" newline="True"/>
+            <input variable="y1"/>
+            <output expression="&quot;Coordinate x2 of B(x2, y2)&quot;" newline="True"/>
+            <input variable="x2"/>
+            <output expression="&quot;Coordinate y2 of A(x2, y2)&quot;" newline="True"/>
+            <input variable="y2"/>
+            <output expression="&quot;Coordinate x3 of C(x3, y3)&quot;" newline="True"/>
+            <input variable="x3"/>
+            <output expression="&quot;Coordinate y3 of C(x3, y3)&quot;" newline="True"/>
+            <input variable="y3"/>
+            <output expression="&quot;Coordinate x of P(x, y)&quot;" newline="True"/>
+            <input variable="x"/>
+            <output expression="&quot;Coordinate y of P(x, y)&quot;" newline="True"/>
+            <input variable="y"/>
+            <if expression="isInside(x1, y1, x2, y2, x3, y3, x, y)">
+                <then>
+                    <output expression="&quot;P is Inside&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;P is not Inside&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="area" type="Real" variable="result">
+        <parameters>
+            <parameter name="x1" type="Integer" array="False"/>
+            <parameter name="y1" type="Integer" array="False"/>
+            <parameter name="x2" type="Integer" array="False"/>
+            <parameter name="y2" type="Integer" array="False"/>
+            <parameter name="x3" type="Integer" array="False"/>
+            <parameter name="y3" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Real" array="False" size=""/>
+            <assign variable="result" expression="abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0)"/>
+        </body>
+    </function>
+    <function name="isInside" type="Boolean" variable="result">
+        <parameters>
+            <parameter name="x1" type="Integer" array="False"/>
+            <parameter name="y1" type="Integer" array="False"/>
+            <parameter name="x2" type="Integer" array="False"/>
+            <parameter name="y2" type="Integer" array="False"/>
+            <parameter name="x3" type="Integer" array="False"/>
+            <parameter name="y3" type="Integer" array="False"/>
+            <parameter name="x" type="Integer" array="False"/>
+            <parameter name="y" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="A" type="Real" array="False" size=""/>
+            <declare name="A1" type="Real" array="False" size=""/>
+            <declare name="A2" type="Real" array="False" size=""/>
+            <declare name="A3" type="Real" array="False" size=""/>
+            <declare name="result" type="Boolean" array="False" size=""/>
+            <assign variable="A" expression="area (x1, y1, x2, y2, x3, y3)"/>
+            <assign variable="A1" expression="area (x, y, x2, y2, x3, y3)"/>
+            <assign variable="A2" expression="area (x1, y1, x, y, x3, y3)"/>
+            <assign variable="A3" expression="area (x1, y1, x2, y2, x, y)"/>
+            <if expression="A = A1 + A2 + A3">
+                <then>
+                    <assign variable="result" expression="True"/>
+                </then>
+                <else>
+                    <assign variable="result" expression="False"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

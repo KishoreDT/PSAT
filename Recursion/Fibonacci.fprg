@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-31 04:00:14 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDI6MzQ6NTMgUE07MjMxMw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDM6MjQ6NDIgUE07MTtLaXNob3JlO0FTVVM7MjAyMC0xMi0zMTswMjozNDo1MyBQTTs0LmZwcmc7NTM3OQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDQ6MDA6MTQgUE07NDc7MjQ3MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="a"/>
+            <for variable="i" start="0" end="a" direction="inc" step="1">
+                <output expression="fib(i)" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="fib" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="0"/>
+            <if expression="a&lt;=1">
+                <then>
+                    <assign variable="c" expression="a"/>
+                </then>
+                <else>
+                    <assign variable="c" expression="fib(a-1)+fib(a-2)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

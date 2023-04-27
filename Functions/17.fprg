@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-24 02:51:17 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTA4LTEwOyAwMzoyNToxOCA7IDMwNzg="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTA4LTExOyAwODowODowOCA7IDMwODQ="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMjQ7MDI6NTE6MTcgUE07MTsyNDIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please, insert a number to be checked&quot;" newline="True"/>
+            <input variable="Num"/>
+            <if expression="checkJumbled(Num)">
+                <then>
+                    <output expression="&quot;True! It's a jumbled number!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;False! It's not a jumbled number!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="checkJumbled" type="Boolean" variable="value">
+        <parameters>
+            <parameter name="Num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Value" type="Boolean" array="False" size=""/>
+            <declare name="esc" type="Boolean" array="False" size=""/>
+            <declare name="digit1, digit2" type="Integer" array="False" size=""/>
+            <assign variable="esc" expression="False"/>
+            <if expression="num / 10 = 0">
+                <then>
+                    <assign variable="Value" expression="True"/>
+                </then>
+                <else/>
+            </if>
+            <while expression="Num &lt;&gt; 0 AND esc = False">
+                <assign variable="value" expression="True"/>
+                <if expression="num / 10 = 0">
+                    <then>
+                        <assign variable="Value" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="digit1" expression="xMOD(Num, 10)"/>
+                <assign variable="digit2" expression="xMOD((num / 10), 10)"/>
+                <if expression="ABS(digit2 - digit1) &gt; 1">
+                    <then>
+                        <assign variable="Value" expression="False"/>
+                        <assign variable="esc" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="Num" expression="Num / 10"/>
+            </while>
+        </body>
+    </function>
+    <function name="xFloor" type="Integer" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <declare name="frac" type="Real" array="False" size=""/>
+            <if expression="a &lt; 0">
+                <then>
+                    <assign variable="r" expression="-(INT(abs(a)) + 1)"/>
+                </then>
+                <else>
+                    <assign variable="r" expression="INT(a)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="xMOD" type="Integer" variable="r">
+        <parameters>
+            <parameter name="a" type="Real" array="False"/>
+            <parameter name="b" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="Integer" array="False" size=""/>
+            <assign variable="r" expression="a - b * xFloor(a/b)"/>
+        </body>
+    </function>
+</flowgorithm>

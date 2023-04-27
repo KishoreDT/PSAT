@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-17 03:12:47 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MDc6MzMgUE07MjMxNQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MDg6NTYgUE07MjtLaXNob3JlO0FTVVM7MjAyMC0xMS0xNzswMjo0Nzo0MyBQTTtGdW5jdGlvbi5mcHJnOzYxODI="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMTc7MDM6MTI6NDcgUE07MTsyNDI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Call by value&quot;" newline="True"/>
+            <output expression="&quot;This is call by value add(2,3)&quot;" newline="True"/>
+            <output expression="add(2,3)" newline="True"/>
+            <output expression="&quot;Call by reference&quot;" newline="True"/>
+            <output expression="&quot;Enter first number&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter second number&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;This is call by reference add(a,b)&quot;" newline="True"/>
+            <output expression="add(a,b)" newline="True"/>
+        </body>
+    </function>
+    <function name="add" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a+b"/>
+        </body>
+    </function>
+</flowgorithm>

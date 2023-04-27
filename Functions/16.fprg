@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-24 02:50:49 PM"/>
+        <attribute name="created" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTA4LTI4OyAwNToyODo0NiA7IDMwOTM="/>
+        <attribute name="edited" value="Um9iZXJ0bzsgREVTS1RPUC1ST0JFUlRPOyAyMDE3LTA4LTI4OyAwNTozODo1NCA7IDMwOTM="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMjQ7MDI6NTA6NDkgUE07MjsyNDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="200" direction="inc" step="1">
+                <if expression="checkPronic(i)">
+                    <then>
+                        <output expression="ToString(i) &amp; &quot; is a Pronic number!&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="checkPronic" type="Boolean" variable="result">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Boolean" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="result" expression="False"/>
+            <for variable="i" start="0" end="INT(SQRT(x))" direction="inc" step="1">
+                <if expression="x = i * (i + 1)">
+                    <then>
+                        <output expression="ToString(i) &amp; &quot; * &quot; &amp; ToString(i+1) &amp; &quot; = &quot; &amp; ToString(x)" newline="True"/>
+                        <assign variable="result" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

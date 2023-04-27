@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-12-31 03:03:34 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDI6MzQ6NTMgUE07MjMxMw=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTItMzE7MDM6MDM6MzQgUE07MTc7MjQ3Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter a number&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="gcd(a,b)" newline="True"/>
+        </body>
+    </function>
+    <function name="gcd" type="Integer" variable="c">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="0"/>
+            <if expression="b==0">
+                <then>
+                    <assign variable="c" expression="a"/>
+                </then>
+                <else>
+                    <assign variable="c" expression="gcd(b, a%b)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

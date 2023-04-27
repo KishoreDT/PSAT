@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Kishore"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-11-03 03:07:51 PM"/>
+        <attribute name="created" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MDM6MDEgUE07MjMwMQ=="/>
+        <attribute name="edited" value="S2lzaG9yZTtBU1VTOzIwMjAtMTEtMDM7MDM6MDc6NTEgUE07MjsyNDE5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter first number:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter second number:&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Run swap!&quot;" newline="True"/>
+            <assign variable="a" expression="a+b"/>
+            <assign variable="b" expression="a-b"/>
+            <assign variable="a" expression="a-b"/>
+            <output expression="&quot;Now first number is:&quot;" newline="True"/>
+            <output expression="&quot;Now second number is:&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
